@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fa-IR">
+  <head>
+  	<title>Table 03</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="/static/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4">آموزش خروجی اکسل با جنگو</h4>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>نام محصول</th>
+					        <th>تعداد</th>
+                              <th>قیمت</th>
+                              <th>موجودی</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+                        {% for product in products %}
+                        	  <tr>
+					        <th scope="row" class="scope" >{{ product.title }}</th>
+					        <td>{{ product.count }}</td>
+					        <td>{{ product.price }}تومان</td>
+					        <td>{{ product.is_active }}</td>
+
+					      </tr>
+                        {% endfor %}
+					    </tbody>
+					  </table>
+
+                    <button class="btn btn-primary" style="margin-left: 500px" onclick="location.href = '{% url 'export_excel' %}';" type="button">خروجی اکسل</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/popper.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/main.js"></script>
+
+	</body>
+</html>
+
